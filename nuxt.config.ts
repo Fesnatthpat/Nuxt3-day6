@@ -11,7 +11,7 @@ export default defineNuxtConfig({
     '/backend/**': { ssr: false }
   },
 
-  css: [ '~/assets/css/main.css' ],
+  css: [ '~/assets/CSS/main.css' ],
 
   postcss: {
     plugins: {
