@@ -13,7 +13,7 @@ export default () => {
     const getUsers = async () => {
         return get<User[]>('/users')  // ใช้ /posts endpoint เพื่อดึงข้อมูลโพสต์ทั้งหมด
     }
-    console.log(getUsers)
+    // console.log(getUsers)
     return {
         getUsers,
     }
