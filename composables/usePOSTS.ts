@@ -1,5 +1,6 @@
 
-import { type Post } from '~/types/post'
+import { type Post } from '~~/types/post'
+
 
 export default () => {
     // const POST_URL = 'http://localhost:3000/api'
@@ -8,7 +9,7 @@ export default () => {
 
     const POST_URL = config.public.postsUrlAPI
 
-    console.log('POST_URL',POST_URL)
+    // console.log('POST_URL',POST_URL)
     
 
 
@@ -20,8 +21,12 @@ export default () => {
     const getPosts = async () => {
         return get<Post[]>('/posts')  // ใช้ /posts endpoint เพื่อดึงข้อมูลโพสต์ทั้งหมด
     }
+    // const getUsers = async () => {
+    //     return get<Post[]>('/users')  // ใช้ /user endpoint เพื่อดึงข้อมูลUsersทั้งหมด
+    // }
 
     return {
         getPosts,
+        // getUsers
     }
 }
