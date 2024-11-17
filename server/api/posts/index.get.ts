@@ -24,7 +24,13 @@ export default defineEventHandler(async(event) => {
             id: true,
             title: true,
             content: true,
-            published: true
+            published: true,
+            createdAt: true,
+            author: {
+                select: {
+                    name: true,
+                }
+            }
         },
         orderBy: {
             id: 'desc' // เรียงลำดับจากมากไปน้อย

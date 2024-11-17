@@ -1,51 +1,43 @@
 <script setup lang="ts">
 
-const posts = ref([
-    { id: 1, title: 'First Post', published: true, author: 'John Doe', createdAt: '2024-01-01' },
-    { id: 2, title: 'Second Post', published: false, author: 'Jane Smith', createdAt: '2024-01-02' },
-    { id: 3, title: 'First Post', published: true, author: 'John Doe', createdAt: '2024-01-01' },
-    { id: 4, title: 'Second Post', published: false, author: 'Jane Smith', createdAt: '2024-01-02' },
-    { id: 5, title: 'First Post', published: true, author: 'John Doe', createdAt: '2024-01-01' },
-    { id: 6, title: 'Second Post', published: false, author: 'Jane Smith', createdAt: '2024-01-02' },
-    { id: 7, title: 'First Post', published: true, author: 'John Doe', createdAt: '2024-01-01' },
-    { id: 8, title: 'user1@email.com', published: false, author: 'user1', createdAt: '123456' },
-    { id: 8, title: 'user2@email.com', published: false, author: 'user2', createdAt: '123456' },
-    // เพิ่มข้อมูลตัวอย่างเพิ่มเติมได้
-])
+const { data: posts, error } = await usePOSTS().getPosts()
+
+// console.log(posts)
 
 const viewPost = (id: number) => {
-    alert(`View post with ID: ${id}`)
-}
+    alert(`View post with ID: ${id}`);
+};
 
 const editPost = (id: number) => {
-    alert(`Edit post with ID: ${id}`)
-}
+    alert(`Edit post with ID: ${id}`);
+};
 
 const deletePost = (id: number) => {
     if (confirm('Are you sure you want to delete this post?')) {
-        alert(`Deleted post with ID: ${id}`)
+        alert(`Deleted post with ID: ${id}`);
     }
-}
+};
 
+// Meta และ Head
 definePageMeta({
     layout: 'backend',
-})
+});
 
 useHead({
     title: 'Posts',
     meta: [
         {
             name: 'keywords',
-            content: 'Posts, Nuxt 3, Backend'
+            content: 'Posts, Nuxt 3, Backend',
         },
         {
             name: 'Description',
-            content: 'Posts Nuxt 3,  IT Genius Engineering'
-        }
-    ]
-})
-
+            content: 'Posts Nuxt 3, IT Genius Engineering',
+        },
+    ],
+});
 </script>
+
 
 <template>
     <div>
